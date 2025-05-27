@@ -86,7 +86,7 @@ def main(input_file, batch_size, hidden_dim, window, lr, epochs):
         pickle.dump((char2idx, idx2char, args), f)
     return avg_loss
     
-# ---------- 网格搜索 ----------
+# 网格搜索 
 def optimize_hyperparameters():
     # 手动列出每个超参数候选值
     grid = {
