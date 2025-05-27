@@ -1,3 +1,4 @@
+# 网格搜索代码
 import os, random, itertools, pickle
 import numpy as np
 import torch, torch.nn as nn, torch.optim as optim
@@ -90,11 +91,11 @@ def main(input_file, batch_size, hidden_dim, window, lr, epochs):
 def optimize_hyperparameters():
     # 手动列出每个超参数候选值
     grid = {
-        'batch_size': [32, 64],
-        'hidden_dim': [1024, 1536, 2048],
-        'window': [16, 18, 20],
-        'learning_rate': [1e-5, 5e-5, 1e-4],
-        'num_epochs': [50, 60, 70]
+        'batch_size': [128, 256, 512],
+        'hidden_dim': [256, 512, 1024],
+        'window': [10, 15, 20],
+        'learning_rate': [0.001, 0.0001, 0.00001],
+        'num_epochs': [100, 300, 500]
     }
     combos = list(itertools.product(*grid.values()))
     print(f">> 网格搜索组合总数: {len(combos)}")
